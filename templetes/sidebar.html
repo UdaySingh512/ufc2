@@ -1,0 +1,136 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Sidebar 07</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{%static 'icofont/icofont.min.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{% static  'css/black.css'  %}">
+
+    
+
+    <style>
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown1-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown1:hover .dropdown1-content {
+  display: block;
+  
+}
+</style>
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" class="active">
+				<h1 class="logo">UFC</h1>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="{% url 'dashboard' %}"><span class="fa fa-home"></span> Home</a>
+          </li>
+          <li>
+            <a href="{% url 'Rankings' %}"><span class="fa fa-sticky-note"></span> Rankings</a>
+          </li> 
+          <li>
+            <a href="{% url 'recordings' %}"><i class="icofont-video icofont-1x mr-2"></i> Recordings</a>
+          </li> 
+
+          <li>
+            <a href="{% url 'upmatches' %}"><span class="fa fa-sticky-note "></span>Upcomming Matches</a>
+          </li>
+          <li>
+            <a href="{% url 'analysis' %}"><i class="icofont-chart-bar-graph  mr-2"></i>  Player Analysis</a>
+          </li>
+          <li>
+            <a href="{% url 'ufcanalysis' %}"><i class="icofont-chart-bar-graph  mr-2"></i> UFC Analysis</a>
+          </li>
+          <li>
+            <a href="senti"><span class="icofont-chart-bar-graph  mr-2"></span> Sentimental Analysis</a>
+          </li>
+          <li>
+            <a href="addreview"><span class="fa fa-paper-plane"></span> Add Review</a>
+          </li>
+
+        </ul>
+
+        
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-3 p-md-1">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              
+              <ul class="nav navbar-nav ml-auto mr-2">
+                <li class="nav-item  ml-4">
+                  <a class="nav-link " href="{% url 'homepage' %}"><i class="icofont-home"></i> Homepage</a>
+              </li>
+                <li class="dropdown1 pt-2 ml-3">
+                  <span>Profile<i class="icofont-user"></i></span>
+                  <div class="dropdown1-content">
+                  <a class="nav-link" href="{% url 'userprofile' %}">My Profile</a>
+                  <a class="nav-link" href="{% url 'editprofile' %}">Edit Profile</a>
+               
+                  
+                  </div>
+                </li>
+               
+                
+                <li class="nav-item ml-2">
+                    <a class="nav-link" href="{% url 'logout' %}">logout <i class="icofont-logout"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+           
+<!-- main  block  -->
+{% block content %}
+
+{% endblock %}
+<!-- Page Content  -->
+
+
+
+
+      </div>
+		</div>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript" src="{%static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  </body>
+</html>
+

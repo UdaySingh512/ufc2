@@ -1,0 +1,25 @@
+{% extends 'header.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid pt-5 pb-5" >
+    <div class="container  mb-4">
+        <div class="row">
+            <div class="col-12  p-5 border shadow ">
+                <h1 class="text-center mb-4">{{data.title|upper}}</h1>
+                <img src="{{data.image.url}}" alt="" width="100%">
+                <h6 class="text-muted mt-2">{{data.addedon}}</h6>
+
+                <p></p>
+                <p class="mt-4">{{data.content|safe}}</p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+{% endblock %}

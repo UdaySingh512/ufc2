@@ -1,0 +1,135 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .events:hover{
+        box-shadow: 2px 2px 10px gray ;
+    }
+</style>
+<div class="container-fluid pt-3">
+    
+
+        <div class="">
+          <div class="text-center">
+          <ul class="nav nav-pills mb-3 " id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+                <h5 class="text-center fw-bold mb-4 heading text-dark">All Matches</h5>
+        </button>
+            </li>
+            <li class="nav-item " role="presentation">
+              <button class="nav-link " id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                
+        <h5 class="text-center fw-bold mb-4 heading text-dark ">Upcoming Matches</h5>
+        </button>
+
+  
+            </li>
+
+                       
+           
+            
+          </ul>
+       
+          </div>
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+              {% for x in match %}
+        <div class="row  border events  ">
+          <div class="col-1"></div>
+          <div class="col-2 pt-5 ps-5 ">
+            <img src="{% static 'image/logo.jpg' %}" alt="" width="70%">
+            
+          </div>
+          <div class="col-5 ps-2 mb-0 ">
+            <a href="{% url 'profile' id=x.athlete1.id %}"><img src="{{x.athlete1.bannerImage.url}}" alt="" width="49%"></a>
+            <a href="{% url 'profile' id=x.athlete2.id %}"><img src="{{x.athlete2.bannerImage.url}}" alt="" width="49%" ></a>
+
+          </div>
+          <div class="col-4 pt-1">
+
+            
+            <h4 class=" mt-2" style="font-size: 20px;"> {{x.athlete1.name}} <span style="color: brown;">VS</span>  {{x.athlete2.name}}</h4>
+            <h6>{{x.matchTime}} , {{x.location}}</h6>
+            <P class="text-secondary">{{x.matchDate}}</P>
+            <h6 class="fw-bold text-danger">Winner: {{x.result|safe}}</h6> 
+
+          </div>
+         
+
+
+        </div>
+
+        {% endfor %}
+
+
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+              {% for x in upcoming %}
+        <div class="row  border events  ">
+          <div class="col-1"></div>
+          <div class="col-2 pt-5 ps-5 ">
+            <img src="{% static 'image/logo.jpg' %}" alt="" width="70%">
+            
+          </div>
+          <div class="col-5 ps-2 mb-0 ">
+            <a href="{% url 'profile' id=x.athlete1.id %}"><img src="{{x.athlete1.bannerImage.url}}" alt="" width="49%"></a>
+            <a href="{% url 'profile' id=x.athlete2.id %}"><img src="{{x.athlete2.bannerImage.url}}" alt="" width="49%" ></a>
+
+          </div>
+          <div class="col-4 pt-1">
+
+            
+            <h4 class=" mt-2" style="font-size: 20px;"> {{x.athlete1.name}} <span style="color: brown;">VS</span>  {{x.athlete2.name}}</h4>
+            <h6>{{x.matchTime}} , {{x.location}}</h6>
+            <P class="text-secondary">{{x.matchDate}}</P>
+
+          </div>
+         
+
+
+        </div>
+
+        {% endfor %}
+
+
+            </div>
+            
+          </div>
+          
+        </div>
+        
+
+
+
+
+        
+
+        <!-- <div class="row  border events ">
+          <div class="col-2 pt-5 ps-5  ">
+            <img src="{% static 'image/logo.jpg' %}" alt="" width="70%">
+
+          </div>
+          <div class="col-6 ps-2 pe-2 ">
+            <img src="{% static 'image/athlete3.png' %}" alt="" width="35%" height="" >
+            <img src="{% static 'image/athlete4.png' %}" alt="" width="35%" height="" >
+
+          </div>
+          <div class="col-4 pt-5 ">
+            <h4 class="fw-bold">OLIVEIRA VS POIRIER</h4>
+            <h6>13:00 PM</h6>
+            <P class="text-secondary">09/05/2020</P>
+
+          </div>
+          
+
+
+        </div> -->
+
+
+
+        </div>
+
+{% endblock %}

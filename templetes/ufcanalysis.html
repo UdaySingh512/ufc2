@@ -1,0 +1,28 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+<style>
+        .heading{
+    font-family: broadway ;
+    color: black;
+}
+</style>
+
+<div class="container-fluid text-center p-2 " style="background: radial-gradient(red,black);background: cover;" > 
+    <h1 class="text-center text-light mb-4 heading  p-3"> UFC Analysis</h1>
+</div>
+    <div class="container text-center  " >
+        <a href="{% url 'ufctoplocations' %}" class="text-danger p-2"><h4> <i class="icofont-chart-bar-graph me-2"></i> <u>Top locations where matches played</u></h4></a>
+        <a href="{% url 'titlebout' %}" class="text-danger p-2"><h4> <i class="icofont-chart-bar-graph me-2"></i><u> Title Bout fought Analysis</u></h4></a>
+        <a href="{% url 'Stanceanalysis' %}" class="text-danger p-2"><h4> <i class="icofont-chart-bar-graph me-2"></i><u>Blue Fighters Stance Analysis </u></h4></a>
+        <a href="{% url 'rstanceanalysis' %}" class="text-danger p-2"><h4> <i class="icofont-chart-bar-graph me-2"></i><u>Red Fighters Stance Analysis </u></h4></a>
+
+        <a href="{% url 'basicinfoanalysis' %}" class="text-danger p-2"><h4> <i class="icofont-chart-bar-graph me-2"></i><u>Fighters Height,Weight,Reach and rounds Analysis</u></h4></a>
+        <a href="{% url 'weightcomp' %}" class="text-danger p-2"><h4> <i class="icofont-chart-bar-graph me-2"></i><u> Weight comparison of two players </u></h4></a>
+        <a href="{% url 'heightcomp' %}" class="text-danger p-2"><h4> <i class="icofont-chart-bar-graph me-2"></i><u> Height comparison of two players </u></h4></a>
+        
+        <a href="{% url 'countryanalysis' %}" class="text-danger p-2"><h4> <i class="icofont-chart-bar-graph me-2"></i><u>Matches played in a country </u></h4></a>
+
+    
+    </div>  
+
+{% endblock %}

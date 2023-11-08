@@ -1,0 +1,287 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+<style>
+    .heading{
+    font-family: broadway ;
+    color: black;
+}
+
+    .events:hover{
+        box-shadow: 3px 3px 10px gray ;
+    }
+
+
+</style>
+<div class="container-fluid text-center p-2 " style="background: radial-gradient(red,black);background: cover;"  > 
+   
+    <h1 class="text-center text-light  mb-4 heading  p-3"> UFC Rankings</h1>
+</div> 
+
+<div class="row ml-5 ">
+    
+    <div class="col-3 mt-3 rounded ml-3 border events" style="background-color: aqua;">
+<table>
+    <h3 class="mb-4 mt-3" style="font-family:Arial black;">Pound For Pound</h3>
+    <td><h6 class="fw-bold mb-3">Name</h6></td>
+    <td><h6 class="fw-bold mb-3">Ranking</h6></td>
+    {% for x1 ,x2 in lp %}
+       
+
+        <tr class="text-dark ">
+
+            <td class="" style="padding-right: 12px;">{{ x1 }} <hr></td>
+            <td >{{ x2 }} <hr></td>
+        </tr>
+       
+       
+    
+    {% endfor %}
+    
+</table>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-3 mt-3 border events rounded" style="background-color: grey;">
+<table >
+    <h3 class="mb-4 mt-3" style="font-family:Arial black;" >Flyweight</h3>
+    <td><h6 class="fw-bold mb-3 text-dark">Name</h6></td>
+    <td><h6 class="fw-bold mb-3 text-dark">Ranking</h6></td>
+    
+    {% for x1 ,x2 in lf %}
+       
+
+    
+        <tr class="text-light">
+            <td style="padding-right: 12px;">{{ x1 }} <hr></td>
+            <td>{{ x2 }} <hr></td>
+        </tr>
+       
+       
+    
+    {% endfor %}
+</table>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-3 mt-3 border events rounded" style="background-color: black">
+        <table >
+            <h3 class="mb-4 mt-3 text-light " style="font-family:Arial black;">Bantamweight</h3>
+            <td><h6 class="fw-bold mb-3">Name</h6></td>
+            <td><h6 class="fw-bold mb-3">Ranking</h6></td>
+    
+            {% for x1 ,x2 in lb %}
+               
+        
+            
+                <tr class="text-light">
+                    <td  style="padding-right: 12px;">{{ x1 }} <hr></td>
+                    <td>{{ x2 }} <hr></td>
+                </tr>
+               
+               
+            
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+<div class="row mt-4 ml-5">
+    
+    <div class="col-3 ml-3 border events rounded" style="background-color: rgb(50, 50, 177);">
+<table>
+    <h3 class="mb-4 mt-3 text-light" style="font-family:Arial black;">Featherweight</h3>
+    <td><h6 class="fw-bold mb-3">Name</h6></td>
+    <td><h6 class="fw-bold mb-3">Ranking</h6></td>
+    {% for x1 ,x2 in lfe %}
+       
+
+    
+        <tr class="text-light">
+            <td style="padding-right: 12px;">{{ x1 }} <hr></td>
+            <td>{{ x2 }} <hr></td>
+        </tr>
+       
+       
+    
+    {% endfor %}
+    
+</table>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-3 border events rounded" style="background-color: brown;">
+<table >
+    <h3 class="mb-4 mt-3 text-light" style="font-family:Arial black;">Lightweight</h3>
+    <td><h6 class="fw-bold mb-3">Name</h6></td>
+    <td><h6 class="fw-bold mb-3">Ranking</h6></td>
+    
+    {% for x1 ,x2 in ll %}
+       
+
+    
+        <tr class="text-light">
+            <td style="padding-right: 12px;">{{ x1 }} <hr></td>
+            <td>{{ x2 }} <hr></td>
+        </tr>
+       
+       
+    
+    {% endfor %}
+</table>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-3 border events rounded" style="background-color: cornsilk;">
+        <table >
+            <h3 class="mb-4 mt-3" style="font-family:Arial black;">Welterweight</h3>
+            <td><h6 class="fw-bold mb-3">Name</h6></td>
+            <td><h6 class="fw-bold mb-3">Ranking</h6></td>
+    
+            {% for x1 ,x2 in lw %}
+               
+        
+            
+                <tr class="text-dark">
+                    <td style="padding-right: 12px;">{{ x1 }} <hr></td>
+                    <td>{{ x2 }} <hr></td>
+                </tr>
+               
+               
+            
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+<div class="row mt-4 ml-5">
+  
+    <div class="col-3 ml-3 border events rounded" style="background-color:tomato;">
+<table>
+    <h3 class="mb-4 mt-3" style="font-family:Arial black;">Middleweight</h3>
+    <td><h6 class="fw-bold mb-3 text-light">Name</h6></td>
+    <td><h6 class="fw-bold mb-3 text-light">Ranking</h6></td>
+    {% for x1 ,x2 in lm %}
+       
+
+    
+        <tr class="text-light">
+            <td style="padding-right: 12px;">{{ x1 }} <hr></td>
+            <td>{{ x2 }} <hr></td>
+        </tr>
+       
+       
+    
+    {% endfor %}
+    
+</table>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-3 border events rounded" style="background-color: chartreuse;">
+<table >
+    <h3 class="mb-4 mt-3" style="font-family:Arial black;">Light Heavyweight</h3>
+    <td><h6 class="fw-bold mb-3">Name</h6></td>
+    <td><h6 class="fw-bold mb-3">Ranking</h6></td>
+    
+    {% for x1 ,x2 in llh %}
+       
+
+    
+        <tr class="text-dark">
+            <td style="padding-right: 12px;">{{ x1 }} <hr></td>
+            <td>{{ x2 }} <hr></td>
+        </tr>
+       
+       
+    
+    {% endfor %}
+</table>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-3 border events rounded" style="background-color: honeydew;">
+        <table >
+            <h3 class="mb-4 mt-3" style="font-family:Arial black;">Heavyweight</h3>
+            <td><h6 class="fw-bold mb-3">Name</h6></td>
+            <td><h6 class="fw-bold mb-3">Ranking</h6></td>
+    
+            {% for x1 ,x2 in lh %}
+               
+        
+            
+                <tr class="text-dark">
+                    <td style="padding-right: 12px;">{{ x1 }} <hr></td>
+                    <td>{{ x2 }} <hr></td>
+                </tr>
+               
+               
+            
+            {% endfor %}
+        </table>
+    </div>
+</div>
+<div class="row mt-4 ml-5">
+    
+    <div class="col-3 ml-3 border events rounded" style="background-color: rgb(211, 46, 134);">
+<table>
+    <h3 class="mb-4 mt-3" style="font-family:Arial black;">Women's Pound for Pound</h3>
+    <td><h6 class="fw-bold mb-3 text-light">Name</h6></td>
+    <td><h6 class="fw-bold mb-3 text-light">Ranking</h6></td>
+    {% for x1 ,x2 in lwp %}
+       
+
+    
+        <tr class="text-light">
+            <td style="padding-right: 12px;">{{ x1 }} <hr></td>
+            <td>{{ x2 }} <hr></td>
+        </tr>
+       
+       
+    
+    {% endfor %}
+    
+</table>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-3 border events rounded" style="background-color: orangered;">
+<table >
+    <h3 class="mb-4 mt-3" style="font-family:Arial black;">Women's Strawweight</h3>
+    <td><h6 class="fw-bold mb-3 text-light">Name</h6></td>
+    <td><h6 class="fw-bold mb-3 text-light">Ranking</h6></td>
+    
+    {% for x1 ,x2 in lws %}
+       
+
+    
+        <tr class="text-light">
+            <td style="padding-right: 12px;">{{ x1 }} <hr></td>
+            <td >{{ x2 }} <hr></td>
+        </tr>
+       
+       
+    
+    {% endfor %}
+</table>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-3 border events rounded" style="background-color: darkmagenta;">
+        <table >
+            <h3 class="mb-4 mt-3" style="font-family:Arial black;">Women's Flyweight</h3>
+            <td><h6 class="fw-bold mb-3 text-light">Name</h6></td>
+            <td><h6 class="fw-bold mb-3 text-light">Ranking</h6></td>
+    
+            {% for x1 ,x2 in lwf %}
+               
+        
+            
+                <tr class="text-light">
+                    <td style="padding-right: 12px;">{{ x1 }} <hr></td>
+                    <td>{{ x2 }} <hr></td>
+                </tr>
+               
+               
+            
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

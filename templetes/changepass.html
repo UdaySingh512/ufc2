@@ -1,0 +1,47 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+<style>
+    .heading{
+    font-family: broadway ;
+    color: black;
+}
+
+
+</style>
+<div class="container-fluid  text-center" >
+   
+    <h1 class="text-center text-dark  heading  p-2">Change Password</h1>
+</div>  
+<div class="container p-3 ">
+    <div class="row">
+     <div class="col-1"></div>
+    <div class="col-10 border shadow p-4 rounded" style="background-color: black;opacity: .9;">
+<form action="" method="POST">
+    {% csrf_token %}
+    <h3 class="text-success">{{rest}}</h3>
+    <h3 class="text-danger">{{res}}</h3>
+
+    <label for="" class="fw-bold text-light" >Your email id</label>
+    <input type="email" class="form-control mb-4" placeholder="enter your email" name="email">
+
+    <label class="fw-bold text-light">Old Password</label>
+
+    <input type="password" class="form-control mb-3"  placeholder="enter a old password" name="oldpass"required>
+    <label class="fw-bold text-light">New Password</label>
+    <input type="password" placeholder="enter password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="UpperCase, LowerCase and Number" name="newpass" id="" class="form-control mb-3">
+    <label class="fw-bold text-light">Re-enter password</label>
+    <input type="password" placeholder="Re-enter password" class="form-control mb-3" name="confpass">
+    <button type="submit"  class="btn btn-danger">Send</button>
+    
+
+  
+  
+
+
+</form>
+    </div>
+    </div>
+    <div class="col-1"></div>
+
+</div>
+{% endblock %}

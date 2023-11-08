@@ -1,0 +1,45 @@
+{% extends 'sidebar.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .heading{
+    font-family: broadway ;
+    color: black;
+}
+
+
+</style>
+
+<div class="container-fluid p-5"  style="background: radial-gradient(red,black)">
+    <h1 class="text-center text-light mb-4 heading  "> User Review</h1>
+    <div class="container border shadow ">
+        <div class="row">
+
+            <div class="col-12 p-5 text-light">
+                <form method="POST">
+                    {% csrf_token %}
+                    <label for="">Subject</label>
+                    <input type="text" class="form-control mb-4" name="subject">
+
+                    <label for="">Review</label>
+                    <textarea class="form-control " name="review"></textarea>
+
+                    <button type="submit" class=" btn btn-dark mt-3 " >Add Review</button>
+                </form>
+
+            {% if res == 1 %}
+            <div class="alert alert-success mt-4">
+                your Feedback has been saved
+
+            </div>
+            {% endif %}
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

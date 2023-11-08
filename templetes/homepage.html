@@ -1,0 +1,150 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<style>
+.heading{
+    font-family: broadway ;
+    color: black;
+}
+.heading span{
+    border-bottom : 3px solid #FE1839
+ ;
+}
+.events:hover{
+        box-shadow: 0px 0px 10px  gray ;
+    }
+
+</style>
+<div style="height: 550px;">
+    <img src="{% static 'theme.jpg' %}" width="100%" height="100%" alt="">
+</div>
+<div class="container-fluid ">
+    <div class="container pt-3 pb-3">
+        <h1 class="text-center mb-4 heading">Rec<span>ent Ne</span>ws</h1>
+        <div class="row ">
+          {% for i in k %}
+          {% if forloop.counter0|divisibleby:3 %}
+        {% endif %}
+            <div class="col-4">
+                <div class="card" style="height: 450px;">
+                    <img src="{{i.urlToImage}}" class="card-img-top" alt="..." >
+                    <div class="card-body">
+                      <h5 class="card-title">{{i.title}}</h5>
+                      <h6 class="fw-bold text-muted">{{i.publishedAt}}</h6>
+                      <p class="card-text">{{i.content|safe|truncatechars:50}}</p>
+                      
+                      <div class="text-center"><a href="{{i.url}}" class="btn rounded-0 text-light fw-bold" style="background-color: #FE1839 ;">Read More</a>
+                      </div>
+                    </div>
+                  </div>
+
+            </div>
+         {% endfor %}
+            <!-- <div class="col-4">
+                <div class="card" >
+                    <img src="{% static 'image/ufchome.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <h6 class="fw-bold text-muted">9:00AM </h6>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      
+                      <div class="text-center"><a href="#" class="btn rounded-0 text-light fw-bold" style="background-color: #FE1839 ;">Read More</a>
+                      </div>
+                    </div>
+                  </div>
+
+            </div>
+            <div class="col-4">
+                <div class="card" >
+                    <img src="{% static 'image/ufchome.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <h6 class="fw-bold text-muted">9:00AM </h6>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      
+                      <div class="text-center"><a href="#" class=" btn rounded-0 text-light fw-bold " style="background-color: #FE1839 ;">Read More</a>
+                      </div>
+                    </div>
+                  </div>
+
+            </div> -->
+
+ 
+        </div>
+    </div>
+   
+    <div class="container p-3">
+      <div class="row ">
+        <div class="col-12 p-5">
+          <h1 class="text-center mb-4 heading">Upco<span>mming Ev</span>ents</h1>
+
+        </div>
+
+      </div>
+
+      {% for x in upcoming %}
+<div class="row  border events  ">
+  <div class="col-1"></div>
+  <div class="col-2 pt-5 ps-5 ">
+    <img src="{% static 'image/logo.jpg' %}" alt="" width="70%">
+    
+  </div>
+  <div class="col-5 ps-2 mb-0 ">
+    <a href="{% url 'profile' id=x.athlete1.id %}"><img src="{{x.athlete1.bannerImage.url}}" alt="" width="49%"></a>
+    <a href="{% url 'profile' id=x.athlete2.id %}"><img src="{{x.athlete2.bannerImage.url}}" alt="" width="49%" ></a>
+
+  </div>
+  <div class="col-4 pt-1">
+
+    
+    <h4 class=" mt-2" style="font-size: 20px;"> {{x.athlete1.name}} <span style="color: brown;">VS</span>  {{x.athlete2.name}}</h4>
+    <h6>{{x.matchTime}} , {{x.location}}</h6>
+    <P class="text-secondary">{{x.matchDate}}</P>
+
+  </div>
+ 
+
+
+</div>
+    
+{% endfor %}
+    </div> 
+
+ 
+        <div class="container p-3">
+        <div class="row ">
+          <div class="col-12 p-5">
+            <h1 class="text-center mb-4 heading">HIG<span>HLI</span>GHTS</h1>
+
+          </div>
+
+        </div>
+        <div class="row  ">
+          <div class="col-4 ">
+            <iframe width="330" height="230" src="https://www.youtube.com/embed/HALf3esHQJ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h6 class="mt-2 text-center text-danger">TOP-20 Submissions of all time</h6>  
+          </div>
+
+          <div class="col-4 ">
+            <iframe width="330" height="230" src="https://www.youtube.com/embed/LWE79K2Ii-s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h6 class="mt-2 text-center text-danger">TOP-20 Konockouts of all time</h6> 
+            </div>
+
+
+          
+          <div class="col-4">
+            <iframe width="330" height="230" src="https://www.youtube.com/embed/9HJK0KAIR2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h6 class="mt-2 text-center text-danger">TOP-10 Women Konockouts of all time</h6> 
+
+          </div>
+
+        </div>
+      </div>  
+</div>
+    
+
+
+
+
+
+{% endblock %}

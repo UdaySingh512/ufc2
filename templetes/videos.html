@@ -1,0 +1,146 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<style>
+ .heading{
+    font-family: broadway ;
+    color: black;
+}
+.heading span{
+    border-bottom : 3px solid #FE1839
+ ;
+}
+</style>
+
+    <div class="container-fluid pt-3 pb-3">
+        <h1 class="text-center mb-4 heading">VI<span>DE</span>OS</h1>
+    </div>  
+    
+        <div class="row ">
+          {% for x in videos %}
+          <div class="col-1"></div>
+        
+            <div class="col-4 mb-5">
+      
+                  <iframe width="500" height="300" src="{{x.video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  
+                    
+                      <h4 class="card-title text-center fw-bold text-danger">{{x.title}}</h4>
+
+            </div>
+            <div class="col-1"></div>
+            {% endfor %}
+        </div>
+    
+            <!-- <div class="col-3">
+                <div class="card" >
+                    <img src="{% static 'image/ufchome.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center fw-bold">CONOR vs DUSTIN</h5>
+                      <h6 class="fw-bold text-muted">9:00AM </h6>
+                      <p class="card-text">Some quick example text to build on the card title </p>
+                      
+                      <div class="text-center"><a href="#" class="btn rounded-0 text-light fw-bold" style="background-color: #FE1839 ;">Watch Now</a>
+                      </div>
+                    </div>
+                  </div>
+
+            </div>
+            <div class="col-3">
+                <div class="card" >
+                    <img src="{% static 'image/ufchome.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <h6 class="fw-bold text-muted">9:00AM </h6>
+                      <p class="card-text">Some quick example text to build on the card title</p>
+                      
+                      <div class="text-center"><a href="#" class=" btn rounded-0 text-light fw-bold " style="background-color: #FE1839 ;">Watch Now</a>
+                      </div>
+                    </div>
+                  </div>
+
+
+            </div>
+            <div class="col-3">
+              <div class="card" >
+                  <img src="{% static 'image/ufchome.jpg' %}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="fw-bold text-muted">9:00AM </h6>
+                    <p class="card-text">Some quick example text to build on the card title</p>
+                    
+                    <div class="text-center"><a href="#" class=" btn rounded-0 text-light fw-bold " style="background-color: #FE1839 ;">Watch Now</a>
+                    </div>
+                  </div>
+                </div>
+
+
+          </div>
+          <div class="row mb-5 mt-5">
+            <div class="col-3">
+                <div class="card" >
+                    <img src="{% static 'image/ufchome.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center fw-bold">KHABIB vs NATE</h5>
+                      <h6 class="fw-bold text-muted text-center fw-bold">9:30 to 10:30</h6>
+                      <p class="card-text">Some quick example text to build on the card title </p>
+                      
+                      <div class="text-center"><a href="#" class="btn rounded-0 text-light fw-bold" style="background-color: #FE1839 ;">Watch Now</a>
+                      </div>
+                    </div>
+                  </div>
+
+            </div>
+            <div class="col-3">
+                <div class="card" >
+                    <img src="{% static 'image/ufchome.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-center fw-bold">CONOR vs DUSTIN</h5>
+                      <h6 class="fw-bold text-muted">9:00AM </h6>
+                      <p class="card-text">Some quick example text to build on the card title </p>
+                      
+                      <div class="text-center"><a href="#" class="btn rounded-0 text-light fw-bold" style="background-color: #FE1839 ;">Watch Now</a>
+                      </div>
+                    </div>
+                  </div>
+
+            </div>
+            <div class="col-3">
+                <div class="card" >
+                    <img src="{% static 'image/ufchome.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <h6 class="fw-bold text-muted">9:00AM </h6>
+                      <p class="card-text">Some quick example text to build on the card title</p>
+                      
+                      <div class="text-center"><a href="#" class=" btn rounded-0 text-light fw-bold " style="background-color: #FE1839 ;">Watch Now</a>
+                      </div>
+                    </div>
+                  </div>
+
+
+            </div>
+            <div class="col-3">
+              <div class="card" >
+                  <img src="{% static 'image/ufchome.jpg' %}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="fw-bold text-muted">9:00AM </h6>
+                    <p class="card-text">Some quick example text to build on the card title</p>
+                    
+                    <div class="text-center"><a href="#" class=" btn rounded-0 text-light fw-bold " style="background-color: #FE1839 ;">Watch Now</a>
+                    </div>
+                  </div>
+                </div>
+
+
+          </div>
+
+
+
+
+        </div> -->
+        
+
+
+{% endblock %}

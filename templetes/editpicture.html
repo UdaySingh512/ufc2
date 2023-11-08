@@ -1,0 +1,12 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+<div class="container p-5">
+<label class="labels ">Profile Picture</label>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+<input type="file" class="form-control"  name="pp" value="{{user.profilePicture}}">
+<center><input class="mt-4" type="submit" value="Change Profile Picture"></center>
+</form>
+</div>
+
+{% endblock %}

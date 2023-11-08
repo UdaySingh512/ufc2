@@ -1,0 +1,42 @@
+{% extends 'header.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .heading{
+     font-family: broadway ;
+     color: black;
+ }
+ .heading span{
+     border-bottom : 3px solid #FE1839
+  ;
+ }
+ </style>
+
+ 
+<div class="container-fluid"  style="background: radial-gradient(black,red,black)">
+    <h1 class="text-center text-light mb-5  heading">OUR <span> BLO</span>GS</h1>
+    {% for x in data %}
+    <div class="container border shadow mb-4" style="background-color: white;">
+    <div class="row ">
+        <div class="col-4 p-2">
+            <img src="{{x.image.url}}" alt="" width="90%" > 
+
+        </div>
+        <div class="col-8 pb-3 pt-3 p-2">
+            <h4 class="fw-bold pb-2 text-dark mb-4">{{x.title|upper}}</h4>
+            <h6 class="text-muted">{{x.addedon}}</h6>
+            <p1 class="">{{x.content|safe|truncatechars:200}}
+ </p1>
+                <div class="text-strat mt-2"><a href="{% url 'fullblog' id=x.id %}" class=" btn rounded-0 text-light fw-bold " style="background-color: #FE1839 ;">Read more..</a>
+                </div>
+        </div>
+
+    </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

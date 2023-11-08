@@ -1,0 +1,63 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+
+                <div class="row " style="background: linear-gradient(to right,red,black)">
+                  <div class="col-6 ps-4 pt-5"> 
+                  
+                   <div class="mapouter"><div class="gmap_canvas">
+                     <iframe class="gmap_iframe p-5" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=596&amp;height=400&amp;hl=en&amp;q=guru nanak dev university&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+         
+                     </iframe>
+                     <a href="https://kokagames.com/">Koka Games</a>
+                   </div>
+                   <style>.mapouter{position:relative;text-align:right;width:700px;height:500px;}.gmap_canvas {overflow:hidden;background:none!important;width:596px;height:400px;}.gmap_iframe {width:596px!important;height:400px!important;}</style></div>
+                   
+                  </div>
+                  <div class="col-6 p-4 pe-5 text-light">
+                    <div class="border shadow p-3">
+                      <h3 class="mb-5">Contact Us</h3>
+                     <form method="POST">
+                       {% csrf_token %}
+                         <label for="">Name</label>
+                         <input type="text" name="user_name" class="form-control mb-4" >
+         
+                         <label for="">Email</label>
+                         <input type="email" name="user_email" class="form-control mb-4">
+         
+                         <label for="">Your Message</label>
+                         <textarea class="form-control  mb-4" name="message"></textarea> 
+         
+                         <button class="btn btn-secondary" type="submit">Send Message</button>
+                     </form>
+                     {% if res == 1 %}
+                     <div class="alert alert-success mt-3">
+                       Message Sent
+
+                     </div>
+                     {% endif %}
+                    </div>
+                   </div>
+                     
+         
+              </div>
+              
+                  <div class="row text-center p-4 bg-dark opacity-60 text-light" style="background: linear-gradient(to right ,red,black)">
+                      <div class="col-4  p-5">
+                        <i class="icofont-phone-circle icofont-3x"></i>
+                        <p>+91 9876549727</p>
+                      </div>
+                      <div class="col-4  p-5">
+                          <i class="icofont-location-pin icofont-3x"></i>
+                          <p>India,Punjab,143534</p>
+                      </div>
+                      <div class="col-4  p-5">
+                          <i class="icofont-wall-clock icofont-3x"></i>
+                          <p>24x7</p>
+         
+                      </div>
+         
+                  </div>
+          </body>
+      
+          {% endblock %}

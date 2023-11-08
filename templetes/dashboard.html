@@ -1,0 +1,79 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+<script type="text/javascript" src="{%static 'js/bootstrap.bundle.min.js' %}"></script>
+
+
+<style>
+    .heading{
+    font-family: broadway ;
+    color: black;
+}
+
+
+</style>
+
+<div class="row ms-3 ml-3 mb-4 p-4 ">
+<a href="{% url 'StaticAnalysis' %}"><div class=" mb-2 card text-white bg-primary  col-3 " style="max-width: 25rem;">
+  <div class="card-header">Static Analysis</div>
+  <div class="card-body">
+    <h5 class="card-title">Analysis</h5>
+    <p class="card-text">Click to see Static Analysis of UFC</p>
+  </div>
+</div></a>
+<div class="col-1"></div>
+<a href="{% url 'analysis' %}"><div class="  card text-white bg-secondary  col-3" style="max-width: 25rem;">
+  <div class="card-header">Dynamic Analysis</div>
+  <div class="card-body">
+    <h5 class="card-title">Player Analysis</h5>
+    <p class="card-text">Click to see Dynamic Analysis of PLayers</p>
+  </div>
+</div></a>
+<div class="col-1"></div>
+<a href="{% url 'ufcanalysis' %}"><div class=" card text-white bg-success  col-3" style="max-width: 25rem;">
+  <div class="card-header">Dynamic Analysis</div>
+  <div class="card-body">
+    <h5 class="card-title">UFC Analysis</h5>
+    <p class="card-text">Click to see Dynamic Analysis of UFC</p>
+  </div>
+</div></a>
+
+</div>
+
+
+     <div class="row mt-1 ">
+    <div class="col-12 ">
+      <img src="{% static 'Visualization/rbstance.png' %}" alt="" width="100%" height="300px">
+
+    </div>
+     </div>
+        
+    <!-- <div class="container-fluid bg-light mt-5">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <center><img src="{% static 'image/winper.png' %}" class="d-block " alt="..." height="500px" width="80%"></center> 
+          </div>
+          <div class="carousel-item">
+            <center><img src="{% static 'Visualization/gendermain.png' %}" class="d-block " alt="..." height="500px" width="80%"></center>
+          </div>
+          <div class="carousel-item">
+            <center><img src="{% static 'Visualization/All Divisions.png' %}" class="d-block" alt="..." height="500px" width="80%"></center>
+          </div>
+        </div>
+        <button class="carousel-control-prev" style="background-color: transparent; border: none;" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" style="background-color: transparent; border: none;" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+     <div class="container">
+       <h4 class="mt-4 text-danger fw-bold mb-2 text-center">Lorem ipsum dolor sit amet consectetur adipisicing eli</h4>
+      <img src="{% static 'Visualization/weightclass.png' %}" alt="" width="100%">
+     </div>
+  </div>   -->
+{% endblock %}

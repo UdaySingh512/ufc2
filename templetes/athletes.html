@@ -1,0 +1,101 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<style>
+ .heading{
+    font-family: broadway ;
+    color: black;
+}
+.heading span{
+    border-bottom : 3px solid #FE1839
+ ;
+}
+.gender a{
+  color: lightslategray;
+  text-decoration: none;
+  font-size: 35px;
+  margin-right: 40px;
+  opacity: .7;
+}
+.gender a:hover{
+  color: black;
+}
+
+
+</style>
+
+    <div class="container-fluid pt-3 pb-3">
+        <h1 class="text-center mb-4 heading">Ath<span>let</span>es</h1>
+    <hr>    
+    </div>
+        <div class="container-fluid text-center gender mb-4 fw-bold  ">
+          {% if key == 1 %}
+          <a href="{% url 'athletes' %}" style="color: black;">All</a>
+
+          <a href="{% url 'athletesgender' id='Women' %}">Women</a>
+
+          <a href="{% url 'athletesgender' id='Men' %}">Men</a>
+          
+          {% elif key == 2 %}
+          <a href="{% url 'athletes' %}" >All</a>
+
+          <a href="{% url 'athletesgender' id='Women' %}">Women</a>
+
+          <a href="{% url 'athletesgender' id='Men' %}" style="color: black;">Men</a>
+         
+
+          {% else %}
+          <a href="{% url 'athletes' %}" >All</a>
+
+          <a href="{% url 'athletesgender' id='Women' %}" style="color: black;">Women</a>
+
+          <a href="{% url 'athletesgender' id='Men' %}" >Men</a>
+          {% endif %}
+
+          <form action="{% url 'search_player' %}" method="post" class="mt-4">
+            {% csrf_token %}
+         <input class=" ms-5 search p-2 border shadow" type="text" placeholder="Search_player " name="player_name">
+         
+        <input type="submit" name="search" value="search">
+   
+        </form>   
+        {% if msg %}
+        <h6 class="text-danger">{{msg}}</h6> 
+         {% endif %}
+          </div>
+          
+          
+    <div class="container-fluid pt-3 pb-3 ">  
+      <div class="container">        
+        <div class="row mb-5">
+          {% for x in data %}
+            
+              <div class="col-4 mb-4 ">
+                <a href="{% url 'profile' id=x.id %}" class="text-decoration-none">
+                <div class="d-flex align-items-end " style="background-image: url({{x.image.url}}); background-size: cover; height: 250px;">
+                  <div class="p-3 bg-dark bg-opacity-25">
+                    <p class="text-light">{{x.division}}</p>
+                      <h5 class="card-title  fw-bold" style="color: #FE1839;">{{x.name|upper}} </h5>
+                      <h6 class="fw-bold text-light ">{{x.win}}-{{x.lose}}-{{x.draw}} (W-L-D)</h6>
+                      
+                  </div>
+              </div>
+                <!-- <div class="card border shadow" >
+                    <img src="{{x.image.url}}" class="card-img-top" height="200px" alt="...">
+                    <div class="card-body text-center">
+                      
+                      
+                      <div class="text-center"><a href="{% url 'profile' id=x.id %}" class="btn rounded-0 text-light fw-bold" style="background-color: #FE1839 ;">PROFILE</a>
+                      </div>
+                    </div>
+                  </div> -->
+</a>
+            </div>
+            
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+
+
+{% endblock %}

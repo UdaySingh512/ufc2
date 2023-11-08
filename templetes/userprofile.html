@@ -1,0 +1,103 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+<style>
+    .heading{
+font-family: broadway ;
+color: black;
+}
+</style>
+<div class="container-fluid text-center">
+    <h1 class="text-center text-dark mb-3 heading  p-2">USER PROFILE </h1>
+
+</div>
+<div class="container">
+    <div class="row p-5">
+        <div class="col-4">
+            <img src="{{user.profilePicture.url}}" alt="" height="200px" width="100%">
+        </div>
+        <div class="col-1"></div>
+        <div class="col-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <label><h6 class="text-dark fw-bold">Name</h6></label>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-primary fw-bold">{{user.username}}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label><h6 class="text-dark fw-bold">Email</h6></label>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-primary fw-bold">{{user.emailid}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label><h6 class="text-dark fw-bold">Gender</h6></label>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-primary fw-bold">{{user.gender}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label><h6 class="text-dark fw-bold">Phone</h6></label>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-primary fw-bold">{{user.phoneNumber}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label><h6 class="text-dark fw-bold">City</h6></label>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-primary fw-bold">{{user.city}}</p>
+                </div>
+            </div>
+        
+        <!-- <h6 class="me-5">Name: {{user.username}}</h6>
+        <h6>Email: {{user.emailid}}</h6>
+        <h6>City: {{user.city}}</h6> -->
+        
+        
+        </div>    
+        </div>
+</div>
+<div class="row  ">
+    <div class="col-4 text-center">
+    <a href="{% url 'editprofile' %}"><button class="fw-bold text-light rounded text-center btn" style="background-color: rgb(41, 41, 235);">Edit Profile</button></a>
+</div>
+
+<div class="col-4 text-center">
+<a href="{% url 'changepass' %}"><button class="fw-bold text-light rounded btn " style="background-color: rgb(41, 41, 235);">Change Password</button></a>
+</div>
+</div>
+<!-- <div class="row p-5">
+
+<div class="col-6">
+ <h3>User Profile</h3>
+
+<h6 class="me-5">Name: {{user.username}}</h6>
+<h6>Email: {{user.emailid}}</h6>
+<h6>City: {{user.city}}</h6>
+
+
+
+</div>
+
+<div class="col-4">
+    <img src="{{user.profilePicture.url}}" alt="" height="200px" width="100%">
+</div>
+</div>
+</div> -->
+
+<!-- <h5>User Profile</h5>
+
+<h6 class="me-5">Name: {{user.username}}</h6>
+<h6>Email: {{user.emailid}}</h6> -->
+
+{% endblock %}

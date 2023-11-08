@@ -1,0 +1,55 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+ 
+<body>
+    <div class="container-fluid " style="background-image: url('{% static 'image/ufchome.jpg' %}'); background-size: cover;">
+        <div class="container  text-light p-5" >
+            
+            <div class="row">
+                <div class="col-2">
+                </div>
+                <div class="col-8 p-5 bg-dark bg-opacity-50 border shadow">
+                    <h3 class=" mb-5 text-center fw-bold">Register</h3>
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                       
+                        <label for="" class="fw-bold" >Your Name</label>
+                        <input type="text" class="form-control mb-4" placeholder="enter your name" name="username">
+                        <label class="fw-bold">Email Address</label>
+    
+                        <input type="email" class="form-control mb-3"  placeholder="enter a valid email" name="useremail"required>
+                        <label class="fw-bold">Password</label>
+                        <input type="password" placeholder="enter password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="UpperCase, LowerCase and Number" name="userpass" id="" class="form-control mb-3">
+                        <label class="fw-bold">Confirm password</label>
+                        <input type="password" placeholder="Re-enter password" class="form-control mb-3" name="confpass">
+                        <button type="submit"  class="btn btn-primary">Register</button>
+                        
+                      
+                      
+        
+                    
+                    </form>
+                    {% if res == 1 %}
+                    <div class="alert alert-danger mt-3">
+                        password couldn't be confirmed.
+ 
+                      </div>
+                      {% endif %}
+
+                      {% if res == 2 %}
+                      <div class="alert alert-danger mt-3">
+                          Email Id already exists.
+   
+                        </div>
+                        {% endif %}  
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+{% endblock %}

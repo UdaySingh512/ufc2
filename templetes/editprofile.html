@@ -1,0 +1,105 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+<style>
+
+    .form-control:focus{box-shadow: none;border-color: #BA68C8}.profile-button{background: rgb(99, 39, 120);box-shadow: none;border: none}.profile-button:hover{background: #682773}.profile-button:focus{background: #682773;box-shadow: none}.profile-button:active{background: #682773;box-shadow: none}.back:hover{color: #682773;cursor: pointer}.labels{font-size: 11px}.add-experience:hover{background: #BA68C8;color: #fff;cursor: pointer;border: solid 1px #BA68C8}
+
+    .heading{
+font-family: broadway ;
+color: black;
+}
+</style>
+<div class="container-fluid text-center">
+    <h1 class="text-center text-dark heading  p-2">Edit PROFILE </h1>
+
+</div>
+
+
+<div class="container rounded " style="background-color: #f9f9f9;">
+
+  
+    <div class="row">
+        <div class="col-4"></div>
+
+   <div class=" col-4 d-flex flex-column align-items-center text-center  py-2 "><img class="rounded-circle mt-4" src="{{user.profilePicture.url}}" height="200px" width="100%" >
+    <a href="{% url 'editpicture' %}"><button class="btn btn-secondary mt-1 ">Edit Picture</button></a>
+            
+    <span class="font-weight-bold">{{user.username}}</span><span class="text-black-50">{{user.emailid}}</span></div>
+     <div class="col-4"></div>
+</div>
+    <form action="" method="POST">
+        {% csrf_token %}
+    <div class="row"> 
+    <div class="col-md-2 "> 
+
+    </div> 
+    <div class="col-md-8 "> 
+        <div class="p-3 py-5"> 
+
+             <div class="row ">
+                  <div class="col-md-12"><label class="labels">Name</label>
+                    <input type="text" class="form-control"  name="un" value="{{user.username}}">
+                </div>
+
+            </div> 
+            <div class="row mt-3"> 
+
+                <div class="col-md-12"><label class="labels">PhoneNumber</label><input type="text" class="form-control" name="pn" value="{{user.phoneNumber}}">
+                </div> 
+                <div class="col-md-12"><label class="labels">City</label><input type="text" class="form-control" name="city" value="{{user.city}}">
+                </div>
+                 <div class="col-md-12"><label class="labels">Email ID</label><input type="email" class="form-control" disabled name="em" value="{{user.emailid}}">
+                </div>
+                 <div class="col-md-12"><label class="labels">Date Of Birth</label><input type="date" class="form-control"  name="dob" value="{{user.dob}}">
+                </div>
+             </div>
+              <div class="row mt-3"> <div class="col-md-6"><label class="labels">State</label><input type="text" class="form-control"name="state" value="{{user.state}}">
+            </div> 
+            <div class="col-md-6"><label class="labels">Gender</label><input type="text" class="form-control" name="gen" value="{{user.gender}}">
+            </div> 
+        </div>
+         <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button>
+        </div> 
+    </div> 
+</div> 
+
+</div>
+</div>
+</div>
+</form>
+</div>
+
+<!-- <div class="container p-4">
+<form action="" method="POST">
+    {% csrf_token %}
+    <label for="">name</label>
+    <input type="name" name="un" value="{{user.username}}"><br><br>
+
+    <label for="">Profile Picture</label>
+    <input type="file" name="pp" value="{{user.profilePicture}}"><br><br>
+
+    <label for="">email</label>
+    <input type="email" disabled name="em" value="{{user.emailid}}"><br><br>
+
+    <label for="">Phone Number</label>
+    <input type="number" name="pn" value="{{user.phoneNumber}}"><br><br>
+
+    <label for="">gender</label>
+    <input type="text" name="gen" value="{{user.gender}}"><br><br>
+
+    <label for="">DOB</label>
+    <input type="date" name="dob" value="{{user.dob}}"><br><br>
+
+    <label for="">city</label>
+    <input type="text" name="city" value="{{user.city}}"><br><br>
+
+    <label for="">state</label>
+    <input type="text" name="state" value="{{user.state}}" >
+    
+    <input type="submit" class="btn btn-primary">
+
+
+
+</form>
+</div> -->
+{% endblock %}

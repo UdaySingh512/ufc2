@@ -1,0 +1,35 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+    .heading{
+    font-family: broadway ;
+    color: black;
+}
+
+
+
+</style>
+<div class="container-fluid text-center p-2  " style="background: radial-gradient(red,black);background: cover;"  >     
+    <h1 class="text-center  mb-4 heading  p-3"> Top n Locations</h1>
+</div>
+
+<div ><h5 class=" text-center mt-2"> <i class="icofont-search mr-2"></i> Search top n no. of  locations </h5>
+<div class="row ">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form action="" method="post" class="mt-3">
+            {% csrf_token %}
+         <input class=" ms-5 search p-2 border shadow form-control" type="number" min="1" max="10" placeholder="enter top locations " name="no">
+         
+         <center ><input class=" p-2 mt-3 ps-4 pe-4" type="submit" name="search" value="   Analyze  "></center>
+   
+        </form>   
+    </div>
+    <div class="col-4"></div>
+
+</div>
+</div>
+
+{% endblock %}

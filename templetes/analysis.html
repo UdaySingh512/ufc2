@@ -1,0 +1,32 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+<style>
+    .heading{
+    font-family: broadway ;
+    color: black;
+}
+
+
+</style>
+<div class="container-fluid p-2 text-center" style="background: radial-gradient(red,black);background: cover;">
+   
+    <h1 class="text-center text-light mb-4 heading  p-3"> Player Analysis</h1>
+</div>    
+    <div class="container text-center p-2 mt-3 " >
+        <a href="{% url 'winningcomp' %}" class="text-danger p-2"><h4> <i class="icofont-chart-bar-graph me-2"></i><u>Winning fights comparison of two players </u></h4></a>
+        <a href="{% url 'blueageplayers' %}" class="text-danger p-2"><h4> <i class="icofont-chart-bar-graph me-2"></i><u> Blue  Players winning age Analysis</u></h4></a>
+        <a href="{% url 'redageplayers' %}" class="text-danger p-2"><h4> <i class="icofont-chart-bar-graph me-2"></i><u> Red  Players winning age Analysis</u></h4></a>
+        <a href="{% url 'redmatches' %}" class="text-danger p-2"><h4> <i class="icofont-chart-bar-graph me-2"></i><u> Red Players Played Match Analysis</u></h4></a>
+        <a href="{% url 'bluematches' %}" class="text-danger p-2"><h4> <i class="icofont-chart-bar-graph me-2"></i><u> Blue Players Played Match Analysis</u></h4></a>
+        <a href="{% url 'bluekosub' %}" class="text-danger p-2"><h4> <i class="icofont-chart-bar-graph me-2"></i><u>Blue fighters KO and Submission win </u></h4></a>
+        <a href="{% url 'redkosub' %}" class="text-danger p-2"><h4> <i class="icofont-chart-bar-graph me-2"></i><u>Red fighters KO and Submission win </u></h4></a>
+        <a href="{% url 'wscomp' %}" class="text-danger p-2"><h4> <i class="icofont-chart-bar-graph me-2"></i><u>Winning Streak comparison of two fighters</u></h4></a>
+
+
+    </div>  
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+<style>
+    .heading{
+font-family: broadway ;
+color: black;
+}
+</style>
+
+<div class="container-fluid text-center  " style="background: radial-gradient(red,black);background: cover;" > 
+<h1 class="text-center text-light mb-4 heading  p-2">POSITIVE TWEETS </h1>
+
+</div>
+
+<h6 class="fw-bold text-dark text-center mb-4">PERCETAGE OF POSITIVETWEETS : {{ppt}}</h6>
+<h5 class="fw-bold text-center mb-3 " style="font-family:Arial Black;" >Sample Tweets : </h5>
+<h6 class="ms-4" style="color:blue">
+
+    {% for x in ptweets %}
+<ul type="I"><li>{{x}}</li> <br></ul>
+{% endfor %}
+
+</h6>
+<div class="container-fluid text-center  " style="background: radial-gradient(red,black);background: cover;" > 
+    <h1 class="text-center text-light mb-4 heading  p-2">NEGATIVE TWEETS </h1>
+    
+    </div>
+    
+    <h6 class="fw-bold text-dark text-center mb-4">PERCETAGE OF NEGATIVETWEETS : {{pnt}}</h6>
+    <h5 class="fw-bold text-center mb-3 "  style="font-family:Arial Black;" >Sample Tweets : </h5>
+    <h6 class="ms-4 ml-2" style="color:red">
+    
+        {% for x in ntweets %}
+    <ul type="I"><li>{{x}} </li><br></ul>
+    {% endfor %}
+    </h6>
+
+<div class="container-fluid text-center  " style="background: radial-gradient(red,black);background: cover;" > 
+    <h1 class="text-center text-light mb-4 heading  p-2">NEUTRAL TWEETS </h1>
+    
+    </div>
+    
+    <h6 class="fw-bold text-dark text-center mb-4">PERCETAGE OF NEUTRALTWEETS : {{pnnt}}</h6>
+    <h5 class="fw-bold text-center mb-3 "  style="font-family:Arial Black;" >Sample Tweets : </h5>
+    <h6 class="ms-4 ml-2" style="color:blue">
+    
+        {% for x in neutraltweets %}
+    <ul type="I"><li>{{x}} </li><br></ul>
+    {% endfor %}
+    </h6>    
+
+ 
+
+{% endblock %}

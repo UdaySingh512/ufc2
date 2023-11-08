@@ -1,0 +1,37 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+<style>
+    .heading{
+    font-family: broadway ;
+    color: black;
+}
+
+
+
+</style>
+<div class="container-fluid text-center p-2 " style="background: radial-gradient(red,black);background: cover;"  > 
+   
+    <h1 class="text-center text-light  mb-4 heading  p-4">Blue  Players Played Match Analysis</h1>
+</div>    
+<div ><h5 class=" text-center pt-3"> <i class="icofont-search mr-2">Search the Blue player name for analysis</i></h5>
+<div class="row p-4">
+    <div class="col-4"></div>
+    <div class="col-4">
+        {% if msg %}
+        {{msg}}
+        {% endif %}
+        <form action="" method="post" class="mt-3">
+            {% csrf_token %}
+         <input class=" ms-5 search p-2 border shadow form-control " type="text" placeholder="enter the blue Player name " name="Player">
+         
+         <center><input class=" p-2 mt-3  ps-4 pe-4" type="submit" name="search" value="Analyze"></center>
+   
+        </form>   
+    </div>
+    <div class="col-4"></div>
+
+</div>
+</div>
+
+{% endblock %}

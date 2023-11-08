@@ -1,0 +1,45 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .heading{
+     font-family: broadway ;
+     color: black;
+ }
+ .heading span{
+     border-bottom : 3px solid #FE1839
+  ;
+ }
+ </style>
+
+<div class="container-fluid" style="background: radial-gradient(red,black)">
+    <h1 class="text-center text-light mb-4  heading">N<span>ew</span>s</h1>
+    <div class="row ms-5">
+      
+    {% for i in k %}
+    {% if forloop.counter0|divisibleby:2 %}
+  {% endif %}
+  <div class="col-6  " >
+  <div class="card mb-3 mt-3" style="max-width: 540px ;border-radius: 8px;">
+    <div class="row " >
+      <div class="col-md-4 " >
+        <img src="{{i.urlToImage}}" class="img-fluid rounded-start" alt="..." width="100%" >
+        <a href="{{i.url}}" class="btn btn-danger mt-2 ms-2"  >Read more..</a>
+      </div>
+      <div class="col-md-8" >
+        <div class="card-body " style="height: 200px;">
+          <h5 class="card-title">{{i.title}}</h5>
+          <h6 class="text-muted">{{i.publishedAt}}</h6>
+          <p class="card-text">{{i.content|safe|truncatechars:50}}</p>
+         
+        </div>
+      </div>
+  </div>
+  </div>
+  </div>
+  {% endfor %}
+  </div>
+  </div>
+  
+
+{% endblock %}

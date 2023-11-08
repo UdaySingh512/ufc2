@@ -1,0 +1,50 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+<style>
+    .heading{
+       font-family: broadway ;
+       color: black;
+   }
+   .heading span{
+       border-bottom : 3px solid #FE1839
+    ;
+   }
+   </style>
+   
+       <div class="container-fluid pt-3 pb-3">
+           <h1 class="text-center mb-4 heading">VI<span>DE</span>OS</h1>
+       </div>  
+
+       <div class="container-fluid text-center gender mb-4 fw-bold  ">
+        <form action="{% url 'search_players' %}" method="post" class="mt-4 mb-4">
+            {% csrf_token %}
+         <input class=" ms-5 search p-2 border shadow" type="text" placeholder="Search_match " name="player_name">
+         
+        <input type="submit" name="search" value="search">
+
+   
+        </form>
+        {% if msg%}
+       <h6 class="text-danger">{{msg}}</h6> 
+        {% endif %}
+
+       </div>
+
+       
+           <div class="row pt-3">
+             {% for x in videos %}
+             <div class="col-1"></div>
+               <div class="col-4 mb-5">
+         
+                     <iframe width="400" height="250" src="{{x.video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                     
+                       
+                         <h4 class="card-title text-center fw-bold text-danger">{{x.title}}</h4>
+   
+               </div>
+               <div class="col-1"></div>
+               {% endfor %}
+           </div>
+
+
+{% endblock %}

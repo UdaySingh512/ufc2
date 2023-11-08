@@ -1,0 +1,31 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="container pt-5 pb-5">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6 p-5 border">
+                <h3 class="text-center fw-bold">Post Your Question</h3>
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <label>
+                        Type Question
+                    </label>
+                    <textarea class="form-control mb-4" name="question"></textarea>
+                    <button class="btn btn-secondary" type="submit">Post Question</button>
+
+                </form>
+
+                {% if res == 1 %}
+                <div class="alert alert-success mt-3">
+                    your question has been posted
+
+                  </div>
+                {% endif %}
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
